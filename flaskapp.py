@@ -1,7 +1,7 @@
 import sqlite3
 
 from flask import Flask, request, g, render_template,send_file
-DATABASE = '/var/www/html/flaskapp/example.db'
+DATABASE = '/var/www/html/flaskapp/database.db'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -32,8 +32,6 @@ def commit():
 
 @app.route("/")
 def hello():
-    execute_query("DROP TABLE IF EXISTS users")
-    execute_query("CREATE TABLE users (Username text,Password text,firstname text, lastname text, email text, count integer)")
     return render_template('index.html')
 
 @app.route('/login', methods =['POST', 'GET'])
@@ -50,7 +48,7 @@ def login():
             message = 'Invalid Credentials !'
     elif request.method == 'POST':
         message = 'Please enter Credentials'
-    return render_template('profile.html', message = message)
+    return render_template('profile..html', message = message)
 
 @app.route('/registration', methods =['GET', 'POST'])
 def registration():
