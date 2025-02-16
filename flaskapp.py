@@ -50,7 +50,7 @@ def login():
             message = 'Invalid Credentials !'
     elif request.method == 'POST':
         message = 'Please enter Credentials'
-    return render_template('index.html', message = message)
+    return render_template('profile.html', message = message)
 
 @app.route('/registration', methods =['GET', 'POST'])
 def registration():
@@ -80,7 +80,7 @@ def registration():
                     return responsePage(row[0], row[1], row[2], row[3])
     elif request.method == 'POST':
         message = 'Some of the fields are missing!'
-    return render_template('registration.html', message = message)
+    return render_template('resiter.html', message = message)
 
 @app.route("/download")
 def download():
