@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            background: #2c3e50; /* Darker background color */
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container1-center {
+            width: 90%;
+            max-width: 500px; /* Adjusted max-width for smaller layout */
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            width: 35%; /* Increased label width for better alignment */
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .input-group input {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .input-group input:focus {
+            border-color: #3498db; /* Blue border on focus */
+            outline: none;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1em;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .form-container {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form-container p {
+            text-align: center;
+            font-size: 1em;
+            color: #34495e;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container1-center">
+        <h1>Registration Page</h1>
+        <div class="form-container">
+            <form action="{{url_for('registration')}}" method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="username">User Name:</label>
+                    <input id="username" name="username" type="text" placeholder="User Name" required />
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input id="password" name="password" type="password" placeholder="Password" required />
+                </div>
+                <div class="input-group">
+                    <label for="firstname">First Name:</label>
+                    <input id="firstname" name="firstname" type="text" placeholder="First Name" required />
+                </div>
+                <div class="input-group">
+                    <label for="lastname">Last Name:</label>
+                    <input id="lastname" name="lastname" type="text" placeholder="Last Name" required />
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input id="email" name="email" type="email" placeholder="Email" required />
+                </div>
+                <div class="input-group">
+                    <label for="textfile">Upload File:</label>
+                    <input type="file" id="textfile" name="textfile" />
+                </div>
+                <button type="submit" id="submit" name="submit">Register</button>
+            </form>
+        </div>
+        <p>Already have an account? Please click <a href="{{url_for('login')}}">here to login</a></p>
+    </div>
+</body>
+</html>
